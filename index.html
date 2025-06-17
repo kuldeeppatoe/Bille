@@ -1,0 +1,103 @@
+here<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Singing & Dancing Cat</title>
+  <style>
+    body {
+      background-color: #0a0f2c;
+      color: white;
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #4fc3f7, 0 0 30px #81d4fa;
+      }
+      to {
+        text-shadow: 0 0 20px #81d4fa, 0 0 30px #29b6f6, 0 0 40px #0288d1;
+      }
+    }
+
+    .cat-container {
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .cat {
+      width: 300px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .speech-bubble {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffffff;
+      color: #000;
+      border-radius: 15px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      animation: pop 1.5s infinite alternate;
+    }
+
+    @keyframes pop {
+      from { transform: translateX(-50%) scale(1); }
+      to { transform: translateX(-50%) scale(1.1); }
+    }
+
+    .button {
+      margin-top: 30px;
+      background-color: #1a237e;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #3949ab;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎤 Cat is Singing & Dancing! 🐱</h1>
+
+  <div class="cat-container">
+    <div class="speech-bubble">Meow Meow 🎶</div>
+    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Dancing Cat" class="cat">
+  </div>
+
+  <br>
+  <button class="button" onclick="playSong()">▶️ Play Song</button>
+
+  <audio id="catSong">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playSong() {
+      document.getElementById("catSong").play();
+    }
+  </script>
+</body>
+</html>
